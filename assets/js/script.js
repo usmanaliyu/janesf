@@ -1,10 +1,21 @@
+const messageAlert = document.querySelector('.messages');
+
 (function ($) { 'use strict';
+  
+
+setTimeout(function(){
+  $('.messages').fadeOut('slow');
+}, 3000 );
 	
-	
-	// Preloader
-	$(window).on('load',function(){
-		$('#preloader').fadeOut('slow',function(){$(this).remove();});
-	});
+       /*------------------
+        Preloader
+    --------------------*/
+    $(window).on('load', function () {
+      $(".loader").fadeOut();
+      $("#preloder").delay(200).fadeOut("slow");
+
+     
+  });
 
 	// e-commerce touchspin
 	$('input[name=\'product-quantity\']').TouchSpin();
@@ -151,6 +162,10 @@ $('#simple-timer').syotimer({
 })(jQuery);
 
 
+
+function reviewComment(e){
+  e.preventDefault();
+}
 
 
 

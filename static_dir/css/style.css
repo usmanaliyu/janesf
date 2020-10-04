@@ -1523,6 +1523,7 @@ span.colored-jane{
   position: fixed;
   bottom: 100px;
   right: 50px;
+  z-index: 1000;
 }
 .whatsapp img{
   width: 100%;

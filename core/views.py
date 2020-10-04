@@ -469,8 +469,8 @@ class ContactView(TemplateView):
             mail = sale = EmailMessage(
                 'We have a new mail',
                 template,
-                email,
-                ['janesfash@gmail.com']
+                "contact@janes-fashion.com",
+                ['contact@janes-fashion.com']
 
             )
             mail.fail_silently = False

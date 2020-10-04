@@ -82,7 +82,7 @@ def on_payment_verified(request, sender, ref, amount, **kwargs):
     sale = EmailMessage(
         'Thank you for your order!!',
         template,
-        email,
+        "contact@janes-fashion.com",
         [email]
 
     )
@@ -92,8 +92,8 @@ def on_payment_verified(request, sender, ref, amount, **kwargs):
     jane = EmailMessage(
         'We have received an order!!',
         template,
-        email,
-        ['janesfash@gmail.com']
+        "contact@janes-fashion.com",
+        ['contact@janes-fashion.com']
 
     )
     jane.fail_silently = False

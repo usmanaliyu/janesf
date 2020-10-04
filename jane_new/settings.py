@@ -97,13 +97,24 @@ WSGI_APPLICATION = 'jane_new.wsgi.application'
 # }
 
 
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.sqlite3',
-         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-     }
- }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "jane",
+        'USER': 'postgres',
+        'HOST': 'localhost',
+        "PORT": '',
+        "PASSWORD": 'austinforreal'
+    }
+}
 
 
 # Password validation
@@ -148,12 +159,20 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_dir')
 ]
 
+# STATICFILES_DIRS = [
+#   "/home/jane/jane/jane_new/static_dir"
+# ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+# STATIC_ROOT = "/home/jane/jane/jane_new/static"
+
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# MEDIA_ROOT = "/home/jane/jane/jane_new/media"
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
@@ -195,8 +214,6 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 
 ACCOUNT_EMAIL_REQUIRED = True
 
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-
 ACCOUNT_SESSION_REMEMBER = True
 
 
@@ -212,3 +229,22 @@ DEFAULT_FROM_EMAIL = 'contact@janes-fashion.com'
 
 
 ACCOUNT_FORMS = {'signup': 'core.forms.CustomSignupForm'}
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#         'LOCATION': [
+#             'janes-fashion.com:11211',
+#             '178.128.147.131:11211',
+#         ]
+#     }
+# }
