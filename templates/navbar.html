@@ -93,24 +93,12 @@
 					<li class="dropdown ">
 						<a href="{% url 'core:shop' %}">Shop</a>
 					</li><!-- / Home -->
-
+					{% for item in category_list  %}
 					<li class="dropdown ">
-						<a href="{% url 'core:about' %}">About Us</a>
+						<a href="{{ item.get_category_url }}">{{ item.name|title}}</a>
 					</li>
-
-					<li class="dropdown dropdown-slide">
-						<a href="#" class="dropdown-toggle">Our Categories
-							<span class="tf-ion-ios-arrow-down"></span></a>
-						<ul class="dropdown-menu">
-							{% for item in category_list  %}
-							<li><a href="{{ item.get_category_url }}">{{ item.name|title}} </a></li>
-							{% endfor %}
-						</ul>
-					</li><!-- / Blog -->
-
-					<li class="dropdown ">
-						<a href="{% url 'blog:blog' %}">Our Blog</a>
-					</li>
+					{% endfor %}
+				
 
 
 
